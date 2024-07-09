@@ -291,8 +291,9 @@ ul.post-list {
 
 ul.post-list > li {
   list-style-type: none;
+  margin: 0 0 1rem 0;
 }
 
-ul.post-list > li > h3 {
-  margin: 0 0 0 0.1rem;
+ul.post-list > li h3 {
+  margin: 0 0 0.1rem 0;
 }
