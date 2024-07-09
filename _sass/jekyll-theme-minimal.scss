@@ -284,3 +284,15 @@ footer {
     color:#444;
   }
 }
+
+ul.post-list {
+  padding-inline-start: 0;
+}
+
+ul.post-list > li {
+  list-style-type: none;
+}
+
+ul.post-list > li > h3 {
+  margin: 0 0 0 0.1rem;
+}
