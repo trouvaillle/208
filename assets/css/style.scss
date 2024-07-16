@@ -16,3 +16,32 @@ pre > code {
     padding: 0;
     border-radius: 0;
 }
+
+.wrapper > header {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.wrapper > header > * {
+    flex: 0 1;
+}
+
+.wrapper > header > .post-list-wrapper {
+    overflow: hidden;
+    flex: 1 1;
+    margin-bottom: 160px;
+    position: relative;
+    width: 100%;
+}
+
+.wrapper > header > .post-list-wrapper > .post-list {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    overflow: scroll;
+}
