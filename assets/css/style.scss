@@ -3,6 +3,10 @@
 
 @import "jekyll-theme-minimal";
 
+html {
+    font-size: 14px;
+}
+
 code {
     background: rgba(135,131,120,.15);
     color: #EB5757;
@@ -15,6 +19,7 @@ pre > code {
     background: inherit;
     padding: 0;
     border-radius: 0;
+    font-size: 0.857rem;
 }
 
 @media print, screen and (min-width: 960px) {
