@@ -4,8 +4,6 @@ title:  "모두의 도서"
 date:   2024-07-06 16:41:11 +0900
 categories: study books
 ---
-# 모두의 도서
-
 # 목적
 
 ---
