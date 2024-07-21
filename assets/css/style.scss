@@ -20,6 +20,11 @@ html {
     overflow: scroll;
 }
 
+img {
+    max-width: none;
+    width: 100%;
+}
+
 @media print, screen and (min-width: 960px) {
     body {
         position: relative;
