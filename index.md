@@ -4,7 +4,7 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./another-page.html).
+[Link to another page](/208/study/books/2024/01/29/books-for-everyone.html).
 
 There should be whitespace between paragraphs.
 
