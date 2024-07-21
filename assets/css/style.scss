@@ -5,6 +5,56 @@
 
 html {
     font-size: 14px;
+    
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    padding: 0;
+    margin: 0;
+}
+
+@media print, screen and (min-width: 960px) {
+    body {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .wrapper {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        max-width: 1280px;
+    }
+
+    .wrapper > header {
+        position: static;
+        flex: 0 1 270px;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        float: none;
+    }
+
+    .wrapper > section {
+        position: static;
+        flex : 1 1;
+        width: auto;
+        padding: 3.5rem;
+        margin: 0;
+        float: none;
+        overflow: scroll;
+    }
 }
 
 code {
@@ -23,27 +73,34 @@ pre > code {
 }
 
 @media print, screen and (min-width: 960px) {
-    .wrapper > header {
+    .wrapper > header > div {
+        position: fixed;
+        width: 270px;
+        height: 100%;
+    }
+
+    .wrapper > header > div > div {
         display: flex;
         flex-direction: column;
         overflow: hidden;
         height: 100%;
         align-items: flex-start;
+        padding: 3.5rem 0 3.5rem 3.5rem;
     }
     
-    .wrapper > header > * {
+    .wrapper > header > div > div > * {
         flex: 0 1;
     }
     
-    .wrapper > header > .post-list-wrapper {
+    .wrapper > header > div > div > .post-list-wrapper {
         overflow: hidden;
         flex: 1 1;
-        margin-bottom: 160px;
+        margin-bottom: 1rem;
         position: relative;
         width: 100%;
     }
     
-    .wrapper > header > .post-list-wrapper > .post-list {
+    .wrapper > header > div > div > .post-list-wrapper > .post-list {
         left: 0;
         right: 0;
         top: 0;
@@ -51,10 +108,15 @@ pre > code {
         position: absolute;
         overflow: scroll;
     }
+
+    .wrapper > header > div > div > footer {
+        position: static;
+        flex: 0 1 9rem;
+    }
 }
 
 @media print, screen and (max-width: 960px) {
-    .wrapper > header > .post-list-wrapper > .post-list {
+    .wrapper > header > div > div > .post-list-wrapper > .post-list {
         max-height: 30vh;
         overflow: scroll;
     }
