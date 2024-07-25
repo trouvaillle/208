@@ -24,6 +24,15 @@ img {
     max-width: 100%;
 }
 
+aside {
+    display: flex;
+    width: 100%;
+    border-radius: 0.25rem;
+    background: rgb(241, 241, 239);
+    padding: 1rem 1rem 1rem 0.75rem;
+    margin: 0 0 1rem 0;
+}
+
 @media print, screen and (min-width: 960px) {
     body {
         position: relative;
