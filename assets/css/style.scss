@@ -4,6 +4,7 @@
 @import "jekyll-theme-minimal";
 
 :root {
+    --background: white;
     --border: #E0E0E0;
     --ambient: #F6F6F6;
     --post-list-title: #5B5B5B;
@@ -12,6 +13,20 @@
     --post-list-current: #121212;
     --aside: rgb(241, 241, 239);
     --text: #0F0F0F;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #1E1E1E;
+        --border: #373737;
+        --ambient: #262626;
+        --post-list-title: #C3C3C3;
+        --post-list-meta: #9C9C9C;
+        --post-list-hover: #363636;
+        --post-list-current: #E1E1E1;
+        --aside: #242424;
+        --text: #DADADA;
+    }
 }
 
 html {
@@ -25,10 +40,29 @@ html {
 
     padding: 0;
     margin: 0;
+
 }
 
 body {
+    background: var(--background);
     color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6, strong, span, small, b, th, td {
+    color: var(--text);
+}
+
+h1 {
+    margin-bottom: 0.875rem;
+}
+
+hr {
+    margin-bottom: 2rem;
+    background: var(--border);
+}
+
+th, td {
+    border-bottom: 1px solid var(--border);
 }
 
 .wrapper > section {
@@ -186,7 +220,7 @@ footer {
         position: static;
         flex : 1 1;
         width: auto;
-        padding: 1rem 2rem 3.5rem 5rem;
+        padding: 1rem 2rem 16rem 5rem;
         margin: 0;
         float: none;
     }
