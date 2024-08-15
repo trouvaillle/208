@@ -11,6 +11,7 @@
     --post-list-hover: #E4E4E4;
     --post-list-current: #121212;
     --aside: rgb(241, 241, 239);
+    --text: #0F0F0F;
 }
 
 html {
@@ -24,6 +25,10 @@ html {
 
     padding: 0;
     margin: 0;
+}
+
+body {
+    color: var(--text);
 }
 
 .wrapper > section {
