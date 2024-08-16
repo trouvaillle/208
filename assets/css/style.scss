@@ -199,6 +199,8 @@ footer {
     color: var(--text);
     font-weight: bold;
     cursor: pointer;
+    padding: 0.15rem 0.3rem;
+    margin: 0;
 }
 
 #theme-mode-toggle:hover {
@@ -320,6 +322,11 @@ footer {
     .wrapper > header > div > div > .post-list-wrapper > .post-list {
         max-height: 25vh;
         overflow: scroll;
+    }
+
+    section {
+        border: none;
+        border-top: 1px solid var(--border);
     }
 
     .site-logo {
