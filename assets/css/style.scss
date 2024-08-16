@@ -69,7 +69,7 @@ th, td {
     overflow: scroll;
 }
 
-section a, a:hover, a:focus {
+section a, section a:hover, section a:focus {
     color: var(--text);
     font-weight: bold;
     border-bottom: 1px solid var(--border);
