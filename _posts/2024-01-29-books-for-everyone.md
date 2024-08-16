@@ -68,7 +68,7 @@ categories: study books
     | [04. 부호화와 발전 - Section 1]({{ "/study/books/data-intensive-applications/2024/07/30/04-부호화와-발전-Section-1.html" | relative_url }})              | 윤현준 | 2024년 7월 30일 |
     | [04. 부호화와 발전 - Section 2, 3]({{ "/study/books/data-intensive-applications/2024/07/30/04-부호화와-발전-Section-2.html" | relative_url }})           | 전현우 | 2024년 7월 30일 |
     | [05. 복제 - Section 1, 2]({{ "/study/books/data-intensive-applications/2024/08/13/05-복제-Section-1,-2.html" | relative_url }})                | 홍성민 | 2024년 8월 13일 |
-    | [05. 복제 - Section 3, 4]({{ ")                | 최현섭 | 2024년 8월 13일 |
+    | [05. 복제 - Section 3, 4]({{ "" }})                | 최현섭 | 2024년 8월 13일 |
     | [06. 파티셔닝 - Section 1, 2]({{ "/study/books/data-intensive-applications/2024/08/15/06-파티셔닝-Section-1,-2.html" | relative_url }})              | 유석모 | 2024년 8월 22일 |
     | [06. 파티셔닝 - Section 3, 4]({{ "/study/books/data-intensive-applications/2024/08/15/06-파티셔닝-Section-3,-4.html" | relative_url }})              | 한재민 | 2024년 8월 22일 |
 
