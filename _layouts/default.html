@@ -12,6 +12,72 @@
     <![endif]-->
     {% include head-custom.html %}
     <link rel="icon" type="image/png" href="{{ "/assets/img/favicon-96.png" | relative_url }}"/>
+    <script type="text/javascript">
+      function detectColorScheme() {
+        var theme="light";    //default to light
+
+        //local storage is used to override OS theme settings
+        if(localStorage.getItem("theme")){
+            if(localStorage.getItem("theme") == "dark"){
+                theme = "dark";
+            }
+        } else if(!window.matchMedia) {
+            //matchMedia method not supported
+            return false;
+        } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            //OS theme setting detected as dark
+            theme = "dark";
+        } else {
+          theme = "light";
+        }
+
+        //dark theme preferred, set document with a `data-theme` attribute
+        if (theme==="dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+        }
+
+        setThemeButtonState();
+      }
+
+      function setThemeButtonState() {
+        const themeButton = document.querySelector('#theme-mode-toggle');
+        if (themeButton === null) return;
+        const themeMode = document.documentElement.getAttribute("data-theme");
+        const sun = '&#x263C;';
+        const moon = '&#x263E;';
+
+        if (themeMode === 'dark') {
+          themeButton.innerHTML = sun;
+        } else {
+          themeButton.innerHTML = moon;
+        }
+      }
+
+      function setThemeButtonAction() {
+        const themeButton = document.querySelector('#theme-mode-toggle');
+        if (themeButton === null) return;
+        const sun = '&#x263C;';
+        const moon = '&#x263E;';
+        
+        themeButton.addEventListener('click', () => {
+          const themeMode = document.documentElement.getAttribute("data-theme");
+          if (themeMode === 'dark') {
+            document.documentElement.removeAttribute("data-theme");
+            themeButton.innerHTML = moon;
+          } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+            themeButton.innerHTML = sun;
+          }
+        });
+      }
+
+      detectColorScheme();
+
+      window.onload = () => {
+        setThemeButtonState();
+        setThemeButtonAction();
+      };
+    </script>
   </head>
   <body>
     <div class="margin left"></div>
@@ -19,7 +85,14 @@
       <header>
         <div>
           <div>
-            <a class="site-title" href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a>
+            <div class="site-title-wrapper">
+              <div>
+                <a class="site-title" href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a>
+              </div>
+              <div>
+                <button type="button" name="button" id="theme-mode-toggle" class="theme-mode-button"></button>
+              </div>
+            </div>
             <p>{{ site.description | default: site.github.project_tagline }}</p>
 
             {% if site.logo %}
