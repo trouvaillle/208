@@ -17,8 +17,8 @@
         var theme="light";    //default to light
 
         //local storage is used to override OS theme settings
-        if(localStorage.getItem("theme")){
-            if(localStorage.getItem("theme") == "dark"){
+        if(localStorage.getItem("room208-theme")){
+            if(localStorage.getItem("room208-theme") == "dark"){
                 theme = "dark";
             }
         } else if(!window.matchMedia) {
@@ -64,9 +64,11 @@
           if (themeMode === 'dark') {
             document.documentElement.removeAttribute("data-theme");
             themeButton.innerHTML = moon;
+            localStorage.setItem("room208-theme", "light");
           } else {
             document.documentElement.setAttribute("data-theme", "dark");
             themeButton.innerHTML = sun;
+            localStorage.setItem("room208-theme", "dark");
           }
         });
       }
