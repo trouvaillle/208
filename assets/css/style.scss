@@ -69,8 +69,26 @@ th, td {
     overflow: scroll;
 }
 
+section a, a:hover, a:focus {
+    color: var(--text);
+    font-weight: bold;
+    border-bottom: 1px solid var(--border);
+}
+
+section a:hover {
+    color: var(--post-list-meta);
+}
+
 img {
     max-width: 100%;
+}
+
+section img {
+    border-radius: 0.2rem;
+}
+
+blockquote {
+    border-left: 0.2rem solid var(--text);
 }
 
 aside {
@@ -107,8 +125,9 @@ pre > code {
     font-size: 0.875rem;
 }
 
-.post-link:hover, .post-link:focus {
+.post-link, .post-link:hover, .post-link:focus {
     font-weight: normal;
+    border-bottom: none;
 }
 
 .post-list-li {
