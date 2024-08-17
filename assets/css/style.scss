@@ -222,6 +222,25 @@ footer {
     flex-direction: column;
     justify-content: center;
 }
+
+dt {
+    color: var(--text);
+}
+
+.question {
+    cursor: help;
+}
+
+.question::after {
+    content: '?';
+    font-size: 0.8rem;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.5rem;
+    color: var(--post-list-meta);
+}
+
 @media print, screen and (min-width: 960px) {
     body {
         position: relative;
