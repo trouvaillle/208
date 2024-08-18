@@ -241,6 +241,15 @@ dt {
     color: var(--post-list-meta);
 }
 
+.indicator {
+    position: absolute; 
+    left: 0;
+    top: 0; 
+    height: 0.22rem; 
+    border-radius: 0.14rem; 
+    background: var(--text);
+}
+
 @media print, screen and (min-width: 960px) {
     body {
         position: relative;

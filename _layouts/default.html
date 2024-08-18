@@ -73,11 +73,28 @@
         });
       }
 
+      function setScrollListener() {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+        const section = document.querySelector('section');
+        section.addEventListener('scroll', (_) => {
+          const percentage = 100 * section.scrollTop / (section.scrollHeight - section.clientHeight);
+          if (!isNaN(percentage)) {
+            const addtionalStyle = "width: " + percentage + "%;";
+            indicator.setAttribute('style', addtionalStyle);
+          } else {
+            indicator.removeAttribute('style');
+          }
+        });
+        document.body.appendChild(indicator);
+      }
+
       detectColorScheme();
 
       window.onload = () => {
         setThemeButtonState();
         setThemeButtonAction();
+        setScrollListener();
       };
     </script>
   </head>
