@@ -250,6 +250,10 @@ dt {
     background: var(--text);
 }
 
+section *::selection {
+    background-color: #0dc7a97a;
+}
+
 @media print, screen and (min-width: 960px) {
     body {
         position: relative;
