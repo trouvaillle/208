@@ -97,6 +97,11 @@ aside {
     margin: 0 0 1rem 0;
 }
 
+aside::before {
+    content: attr(mark);
+    padding: 0 0.75rem 0 0;
+}
+
 code {
     background: rgba(135,131,120,.15);
     color: #EB5757;
