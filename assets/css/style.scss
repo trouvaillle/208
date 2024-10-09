@@ -156,6 +156,10 @@ pre > code {
     color: var(--post-list-meta);
 }
 
+section .view {
+    text-align: right;
+}
+
 header .view {
     text-align: left;
     color: var(--post-list-title);
