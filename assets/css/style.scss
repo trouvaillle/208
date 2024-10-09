@@ -156,17 +156,32 @@ pre > code {
     color: var(--post-list-meta);
 }
 
-.view {
-    text-align: right;
-    margin-bottom: 3rem;
+header .view {
+    text-align: left;
+    color: var(--post-list-title);
+    margin: 0.5rem 0 0 0;
+}
+
+header .view > a, header .view > a:hover, header .view > a:focus {
+    color: var(--post-list-title);
 }
 
 .reference {
-    margin: 1rem 0 1rem 0;
+    margin: 0.5rem 0;
     color: var(--post-list-title);
 }
 
 .reference > a, .reference > a:hover, .reference > a:focus {
+    color: var(--post-list-title);
+}
+
+p.posts {
+    display: none;
+    margin: 1rem 0 1rem 0;
+    color: var(--post-list-title);
+}
+
+p.posts > a, p.posts > a:hover, p.posts > a:focus {
     color: var(--post-list-title);
 }
 
@@ -353,12 +368,14 @@ section *::selection {
 
 @media print, screen and (max-width: 960px) {
     .wrapper > header {
-        padding-right: 50%;
+        padding-right: 0;
+        margin-bottom: 1rem;
     }
 
     .wrapper > header > div > div > .post-list-wrapper > .post-list {
         max-height: 25vh;
         overflow: scroll;
+        display: none;
     }
 
     section {
@@ -367,8 +384,9 @@ section *::selection {
     }
 
     .site-logo {
-        max-width: 40%;
-        max-height: 50%;
+        max-width: 30%;
+        max-height: 30%;
+        display: none;
     }
 
     .site-title-wrapper {
@@ -382,6 +400,38 @@ section *::selection {
     .site-title-wrapper > div:nth-child(2) {
         display: inline;
     }
+
+    .reference {
+        margin: 0;
+        color: var(--post-list-title);
+        text-align: right;
+    }
+    
+    p.posts {
+        display: block;
+        margin: 0 0 1rem 0;
+        text-align: right;
+    }
+
+    p.description {
+        margin: 0;
+    }
+
+    .header-container {
+        display: flex;
+    }
+
+    .header-container .left {
+        flex: 3 1;
+    }
+
+    .header-container .right {
+        flex: 1 1;
+    }
+
+    header .view {
+        text-align: right;
+    }
 }
 
 @media print, screen and (max-width: 720px) {
@@ -390,6 +440,9 @@ section *::selection {
     }
 
     .site-logo {
+        display: none;
+    }
+    .wrapper > header > div > div > .post-list-wrapper > .post-list {
         display: none;
     }
 }

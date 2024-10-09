@@ -103,81 +103,36 @@
     <div class="wrapper">
       <header>
         <div>
-          <div>
-            <div class="site-title-wrapper">
-              <div>
-                <a class="site-title" href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a>
-              </div>
-              <div>
-                <button type="button" name="button" id="theme-mode-toggle" class="theme-mode-button"></button>
-              </div>
-            </div>
-            <p>{{ site.description | default: site.github.project_tagline }}</p>
-
-            {% if site.logo %}
-              <img class="site-logo" src="{{site.logo | relative_url}}" alt="Logo" />
-            {% endif %}
-
-            {% if site.github.is_project_page %}
-            <p class="view" style="margin: 0 0 0.5rem 0;">
-              <a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a>
-            </p>
-            {% endif %}
-            <p class="reference">
-              <a href="{{ site.reference.notion }}">🔗 Notion</a>
-            </p>
-
-            {% if site.paginate %}
-              {% assign posts = paginator.posts %}
-            {% else %}
-              {% assign posts = site.posts %}
-            {% endif %}
-
-            {%- if posts.size > 0 -%}
-              {%- if page.list_title -%}
-                <h2 class="post-list-heading">{{ page.list_title }}</h2>
-              {%- endif -%}
-              <div class="post-list-wrapper">
-                <ul class="post-list">
-                  {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-                  {%- for post in posts -%}
-                  {%- if post.visible == true or post.visible == "true" or post.visible == nul -%}
-                  {%- assign words = post.content | number_of_words -%}
-                  {%- if page.url == post.url -%}
-                    {%- assign additionalClass = " current" -%}
-                  {%- else -%}
-                    {%- assign additionalClass = "" -%}
-                  {%- endif -%}
-                  <span>{{ isCurrentPage }}</span>
-                  <li class="{{ "post-list-li" | append: additionalClass }}">
-                    <a class="post-link" href="{{ post.url | relative_url }}">
-                      <div class="post-list-title">{{ post.title | escape }}</div>
-                      <span class="post-list-meta">{{- post.date | date: date_format }} &middot; {{ words | divided_by:180 }} min</span>
-                      {%- if site.show_excerpts -%}
-                      <div class="excerpt">{{ post.content | strip_html | truncate: 200 }}</div>
-                      {%- endif -%}
-                    </a>
-                  </li>
-                  {%- endif -%}
-                  {%- endfor -%}
-                </ul>
-              </div>
-
-              {% if site.paginate %}
-                <div class="pager">
-                  <ul class="pagination">
-                  {%- if paginator.previous_page %}
-                    <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-                  {%- endif %}
-                    <li><div class="current-page">{{ paginator.page }}</div></li>
-                  {%- if paginator.next_page %}
-                    <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-                  {%- endif %}
-                  </ul>
+          <div class="header-container">
+            <div class="left">
+              <div class="site-title-wrapper">
+                <div>
+                  <a class="site-title" href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a>
                 </div>
-              {%- endif %}
+                <div>
+                  <button type="button" name="button" id="theme-mode-toggle" class="theme-mode-button"></button>
+                </div>
+              </div>
+              <p class="description">{{ site.description | default: site.github.project_tagline }}</p>
+              {% if site.logo %}
+                <img class="site-logo" src="{{site.logo | relative_url}}" alt="Logo" />
+              {% endif %}
+            </div>
+            <div class="right">
+              {% if site.github.is_project_page %}
+              <p class="view">
+                <a href="{{ site.github.repository_url }}">🖥️ Github <small>{{ site.github.repository_nwo }}</small></a>
+              </p>
+              {% endif %}
+              <p class="reference">
+                <a href="{{ site.reference.notion }}">🔗 Notion</a>
+              </p>
+              <p class="posts">
+                <a href="{{ "/posts" | relative_url }}">📃 Posts</a>
+              </p>
+            </div>
 
-            {%- endif -%}
+            {% include posts.html %}
 
             <footer>
               <!--

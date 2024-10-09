@@ -9,3 +9,5 @@ date_format: "%Y-%m-%d"
 timezone: Asia/Seoul
 reference:
   notion: https://www.notion.so/a18a6da34379452f9bd87088943b4ee8?v=91047574d84440cc99702e386a1f1d9c
+include:
+  - _pages
